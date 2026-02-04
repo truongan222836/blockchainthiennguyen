@@ -1,0 +1,18 @@
+{
+  "name": "blockchain-charity-platform",
+  "version": "1.0.0",
+  "description": "Website ứng dụng blockchain để đảm bảo tính an toàn, minh bạch trong thiện nguyện",
+  "main": "backend/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": ["blockchain", "charity", "transparency", "donation"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
