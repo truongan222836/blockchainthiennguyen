@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-7c518dc71cb44b9855c30d41b59c7db2d8ba7bb3",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/MyWallet.sol": "project/contracts/MyWallet.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/MyWallet.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity ^0.8.28;\r\n\r\ncontract MyWallet {\r\n    address owner;\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    function deposite() external payable {}\r\n\r\n    function withdraw(uint256 value) external {\r\n        require(msg.sender == owner, \"Only owner can withdraw\");\r\n        payable(msg.sender).transfer(value);\r\n    }\r\n}"
+      }
+    }
+  }
+}
